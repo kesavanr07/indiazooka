@@ -43,7 +43,7 @@
     <body>
         <div>
             <div class="header">
-                <div class="container" onclick="location.href='/blog_app/'">
+                <div class="container" onclick="location.href='/'">
                     <h1>INDIAZOOKA</h1>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                             <li class="nav-item dropdown">
                                 <a
                                     class="nav-link text-uppercase <?php if(sizeof($data['sub_categories']) === 0) { echo "remove-arrow"; } else { echo "dropdown-toggle"; }?>"
-                                    href="/blog_app/context.php?cat_id=<?php echo $data["id"]; ?>"
+                                    href="/context.php?cat_id=<?php echo $data["id"]; ?>"
                                     <?php if(sizeof($data['sub_categories']) > 0) { ?>
                                     role="button"
                                     data-toggle="dropdown"
@@ -68,7 +68,7 @@
                                 <?php if(sizeof($data['sub_categories']) > 0) { ?>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <?php foreach($data['sub_categories'] as $sub_data) { ?>
-                                        <a class="dropdown-item text-uppercase" href="/blog_app/context.php?cat_id=<?php echo $sub_data["id"]; ?>">
+                                        <a class="dropdown-item text-uppercase" href="/context.php?cat_id=<?php echo $sub_data["id"]; ?>">
                                             <?php echo $sub_data["category_name"]; ?>
                                         </a>
                                     <?php } ?>

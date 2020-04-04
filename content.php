@@ -45,9 +45,9 @@
 
 <div class="container context-menu">
     <div class="nav-link-tag">
-    <a href="/blog_app/">Home</a>
+    <a href="/">Home</a>
     &nbsp;>&nbsp;
-    <a href="/blog_app/context.php?cat_id=<?php echo $page_content[0]['cat_id']; ?>" class="">Context</a>
+    <a href="/context.php?cat_id=<?php echo $page_content[0]['cat_id']; ?>" class="">Context</a>
     </div>
     <div class="">
         <div class="h5 text-uppercase">
@@ -59,10 +59,10 @@
     </div>
     <div class="btm-padding page-nav">
         <?php if($prev_artical > 0) { ?>
-        <a href="/blog_app/content.php?id=<?php echo $prev_artical; ?>" class="btn btn-default nav-button">Previous</a>
+        <a href="/content.php?id=<?php echo $prev_artical; ?>" class="btn btn-default nav-button">Previous</a>
         <?php } ?>
         <?php if($next_artical > 0) { ?>
-        <a href="/blog_app/content.php?id=<?php echo $next_artical; ?>" class="btn btn-default nav-button pull-right">Next</a>
+        <a href="/content.php?id=<?php echo $next_artical; ?>" class="btn btn-default nav-button pull-right">Next</a>
         <?php } ?>
     </div>
 </div>

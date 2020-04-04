@@ -25,13 +25,13 @@
 
 <div class="container context-menu">
     <div class="nav-link-tag">
-        <a href="/blog_app/">Home</a>
+        <a href="/">Home</a>
     </div>
     <div class="">
         <div class="list-group">
             <?php foreach($page_content_result as $row) { ?>
             <a 
-                href="/blog_app/content.php?id=<?php echo $row['id']; ?>" 
+                href="/content.php?id=<?php echo $row['id']; ?>" 
                 class="list-group-item list-group-item-action text-uppercase"
             >
                 <?php echo $row['title']; ?>

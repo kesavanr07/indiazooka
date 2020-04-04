@@ -35,7 +35,7 @@
                         $index = 0; 
                         foreach($latest_updates as $row) { 
                     ?>
-                    <div class="carousel-item <?php if($index == 0) { echo 'active'; } ?>" onclick="location.href='/blog_app/content.php?id=<?php echo $row['id']; ?> '">
+                    <div class="carousel-item <?php if($index == 0) { echo 'active'; } ?>" onclick="location.href='/content.php?id=<?php echo $row['id']; ?> '">
                         <h3> <?php echo $row['title']; ?> </h3>
                         <br/>
                         <p>
@@ -69,7 +69,7 @@
         <div class="content-block">
             <?php foreach($last_updates as $row) { ?>
             <div class="card">
-                <div class="card-body" onclick="location.href='/blog_app/content.php?id=<?php echo $row['id']; ?>'">
+                <div class="card-body" onclick="location.href='/content.php?id=<?php echo $row['id']; ?>'">
                     <?php echo $row['title']; ?> <i>>></i>
                 </div>
             </div>
