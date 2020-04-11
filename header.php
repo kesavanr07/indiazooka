@@ -43,12 +43,17 @@
     <body>
         <div>
             <div class="header">
-                <div class="container" onclick="location.href='/'">
-                    <h1>INDIAZOOKA</h1>
+                <div class="container">
+                    <h1 onclick="location.href='/'">INDIAZOOKA</h1>
+                    <h2>
+                        <span onclick="location.href='/'">INDIAZOOKA</span>
+                        <i class="fa fa-bars toggle_menu active"></i>
+                        <i class="fa fa-times toggle_menu"></i>
+                    </h2>
                 </div>
             </div>
             <div class="links">
-                <div class="">
+                <div>
                     <nav class="navbar navbar-expand-sm">
                         <ul class="navbar-nav">
                             <?php foreach($categories_data as $data) { ?>
