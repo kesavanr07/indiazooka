@@ -1,16 +1,16 @@
 <?php
+    $is_admin_panel = false;
+    $home_page = false;
 
     include 'db_mysql.php';
     include 'header.php';
     
     $url_components = parse_url($_SERVER['REQUEST_URI']); 
   
-    // Use parse_str() function to parse the 
-    // string passed via URL 
     parse_str($url_components['query'], $params); 
     
     $page_content           = [];
-    $sql                    = "SELECT * FROM pagecontent WHERE id = ".$params['id'];
+    $sql                    = "SELECT *,DATE_FORMAT(created_date, '%d %b %Y %h:%i %p') as date_value FROM pagecontent WHERE id = ".$params['id'];
     $page_content_result    = $conn->query($sql);
 
     if($page_content_result->num_rows > 0) {
@@ -18,53 +18,88 @@
             array_push($page_content, $row);
         }
     }
-    
-        
-    $next_artical   = 0;
-    $sql            = "SELECT id FROM pagecontent WHERE cat_id = ".$page_content[0]['cat_id']." AND id > ".$page_content[0]['id']." ORDER BY id LIMIT 1";
-    $response       = $conn->query($sql);
 
-    if($response->num_rows > 0) {
-        foreach($response as $row) {
-            $next_artical= $row['id'];
+    $related_content        = [];
+    $error_msg              = "";
+    $sql                    = "SELECT id, title, one_line_description, content, DATE_FORMAT(created_date, '%d-%b-%Y %h:%i %p') as date_value FROM pagecontent WHERE id != ".$page_content[0]['id']." AND cat_id = ".$page_content[0]['cat_id'];
+    $related_content_result = $conn->query($sql);
+
+    if($related_content_result->num_rows > 0) {
+        foreach($related_content_result as $row) {
+            array_push($related_content, $row);
         }
-    }
-
-        
-    $prev_artical   = 0;
-    $sql            = "SELECT id FROM pagecontent WHERE cat_id = ".$page_content[0]['cat_id']." AND id < ".$page_content[0]['id']." ORDER BY id LIMIT 1";
-    $response       = $conn->query($sql);
-
-    if($response->num_rows > 0) {
-        foreach($response as $row) {
-            $prev_artical= $row['id'];
-        }
+    } else {
+        $error_msg = "Empty Data found";
     }
 
 ?>
 
 <div class="container context-menu">
-    <div class="nav-link-tag">
-    <a href="/">Home</a>
-    &nbsp;>&nbsp;
-    <a href="/context.php?cat_id=<?php echo $page_content[0]['cat_id']; ?>" class="">Context</a>
-    </div>
-    <div class="">
-        <div class="h5 text-uppercase">
-            <b><?php echo $page_content[0]['title']; ?></b>
+    <div class="col-10 offset-1">
+        <div class="nav-link-tag">
+            <a href="<?php echo $redirect_url; ?>">Home</a>
+            &nbsp;>&nbsp;
+            <a href="<?php echo $redirect_url; ?>context.php?cat_id=<?php echo $page_content[0]['cat_id']; ?>" class="">Context</a>
+        </div>
+        <div class="content-header">
+            <hr>
+            <div>
+                <span class="title_content"><?php echo $page_content[0]['title']; ?></span>
+            </div>
+            <div class="uploaded_by">
+                <div><img src="./public/images/LOGO.png" alt="no-img"></div>
+                <div class="user_details">Harish<br><?php echo $page_content[0]['date_value']; ?></div>
+            </div>
+            <hr>
         </div>
         <div class="content-block">
             <?php echo $page_content[0]['content']; ?>
         </div>
+        <div class="uploaded_by">
+            <div class="uploaded_date"><br>Reedited by</div>
+            <div><img src="./public/images/LOGO.png" alt="no-img"></div>
+            <div class="user_details">Harish<br><?php echo $page_content[0]['date_value']; ?></div>
+        </div>
+        <hr>
+        <div class="content-block">
+            <h5>Report mistakes and provide corrections:</h5>
+            <form>
+                <div class="input-group mb-3">
+                    <textarea class="form-control" id="feedback" rows="5"></textarea>
+                </div>
+                <div>
+                    <button type="reset" class="btn btn-default nav-button">Cancel</button>
+                    <button type="button" class="btn nav-button-blue pull-right">Save</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="btm-padding page-nav">
-        <?php if($prev_artical > 0) { ?>
-        <a href="/content.php?id=<?php echo $prev_artical; ?>" class="btn btn-default nav-button">Previous</a>
+
+    <hr>
+    <h3>Related</h3>
+    <section class="customer-logos slider">
+        <?php foreach($related_content as $row) { ?>
+        <div class="slide" onclick="location.href='<?php echo $redirect_url; ?>content.php?id=<?php echo $row['id']; ?> '">
+            <div class="related_card">
+                <div class="related_card_body">
+                    <div class="related_card_content">
+                        <h3 class="related_card_title">
+                            <?php echo $row['title']; ?>
+                        </h3>
+                        <p>
+                            <?php echo $row['one_line_description']; ?>
+                        </p>
+                    </div>
+                    <div class="uploaded_by">
+                        <!-- <div class="uploaded_date"><br>Posted By</div> -->
+                        <div><img src="./public/images/LOGO.png" alt="no-img"></div>
+                        <div class="user_details">Harish<br><?php echo $row['date_value']; ?></div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <?php } ?>
-        <?php if($next_artical > 0) { ?>
-        <a href="/content.php?id=<?php echo $next_artical; ?>" class="btn btn-default nav-button pull-right">Next</a>
-        <?php } ?>
-    </div>
+    </section>
 </div>
 
 <?php 

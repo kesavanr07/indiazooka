@@ -1,4 +1,6 @@
 <?php
+    $is_admin_panel = false;
+    $home_page = false;
 
     include 'db_mysql.php';
     include 'header.php';
@@ -11,7 +13,7 @@
     
     $page_content           = [];
     $error_msg              = "";
-    $sql                    = "SELECT id, title FROM pagecontent WHERE cat_id = ".$params['cat_id'];
+    $sql                    = "SELECT id, title, one_line_description, DATE_FORMAT(created_date, '%d-%b-%Y %h:%i %p') as date_value FROM pagecontent WHERE cat_id = ".$params['cat_id'];
     $page_content_result    = $conn->query($sql);
 
     if($page_content_result->num_rows > 0) {
@@ -21,24 +23,35 @@
     } else {
         $error_msg = "Empty Data found";
     }
+    // echo "<pre>";
+    // print_r($page_content);
+    // echo "</pre>";
 ?>
 
 <div class="container context-menu">
-    <div class="nav-link-tag">
-        <a href="/">Home</a>
-    </div>
-    <div class="">
-        <div class="list-group">
+    <div class="col-10 offset-1">
+            <div class="nav-link-tag">
+                <a href="<?php echo $redirect_url; ?>">Home</a>
+            </div>
+            <div class="list-group">
             <?php foreach($page_content_result as $row) { ?>
-            <a 
-                href="/content.php?id=<?php echo $row['id']; ?>" 
-                class="list-group-item list-group-item-action text-uppercase"
+            <div 
+                onclick="location.href='<?php echo $redirect_url; ?>content.php?id=<?php echo $row['id']; ?>';" 
+                class="list-group-item list-group-item-action"
             >
-                <?php echo $row['title']; ?>
-            </a>
+                <div class="title_content"><?php echo $row['title']; ?></div>
+                <div class="list_content">
+                    <p><?php echo $row['one_line_description']; ?></p>
+                    <p class="read_more">Read More</p>
+                    <div class="uploaded_by">
+                        <div><img src="./public/images/LOGO.png" alt="no-img"></div>
+                        <div class="user_details">Harish<br><?php echo $page_content[0]['date_value']; ?></div>
+                    </div>
+                </div>                
+            </div>
             <?php } ?>
             <?php if($error_msg != '') { ?>
-            <div class="alert alert-primary text-center" role="alert">
+            <div class="alert my_alert text-center" role="alert">
                 <?php echo $error_msg; ?>
             </div>
             <?php } ?>
