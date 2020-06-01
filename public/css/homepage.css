@@ -578,17 +578,54 @@ hr {
 		margin-top: 11px;
 		font-size: 20px;
 	}
-	.related_card_title{
-		font-size: 1.3em;
-	}
-	.related_card_content p {
+	.related_card_content p, .nav-link-tag {
 		font-size: 16px;
 	}
 	.user_details {
 		font-size: 12px;
+		margin-top: -40px;
+		margin-left: 53px;
 	}
 	.nav-tabs .nav-link {
 		font-size: 13px;
+	}
+	.read_more, .content-block, footer {
+		font-size: 15px;
+	}
+	.h5, h5 {
+		font-size: 1.02rem;
+	}
+	.list-group-item {
+		padding: 6px 0px;
+	}
+	.title_content {
+		font-size: 24px;
+	}
+	.list-group-item .title_content, .related_card_title {
+		font-size: 22px;
+	}
+	.related_card {
+		height: 375px;
+	}	
+	.related_card_title {
+		min-height : 120px;
+	}
+	.related_topic {
+		margin-left: 18px;
+		font-size: 1.4rem;
+	}
+	.related_card_content {
+		min-height: 280px;
+	}
+	.list-group-item .list_content {
+		font-size: 16px;
+	}
+	.uploaded_by img {
+		width: 45px;
+		height: 45px;
+	}
+	.navbar-nav {
+		margin-left: 1%;
 	}
 }
 
@@ -606,6 +643,12 @@ hr {
 	.header .container h2, .toggle_menu {
 		font-size: 28px;
 	}
+	.nav-tabs {
+		margin-left: 15px;
+	}
+	.nav-link {
+		padding: 8px 3px;
+	}
 }
 @media only screen and (max-width: 290px) {
 	.header .container h2, .toggle_menu {
@@ -615,6 +658,15 @@ hr {
 @media only screen and (max-width: 260px) {
 	.header .container h2, .toggle_menu{
 		font-size: 23px;
+	}
+	.related_card {
+		height: 500px;
+	}	
+	.related_card_title {
+		min-height : 170px;
+	}
+	.related_card_content {
+		min-height: 290px;
 	}
 }
 @media only screen and (max-width: 252px) {

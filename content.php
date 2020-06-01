@@ -76,7 +76,7 @@
     </div>
 
     <hr>
-    <h3>Related</h3>
+    <h3 class="related_topic">Related</h3>
     <section class="customer-logos slider">
         <?php foreach($related_content as $row) { ?>
         <div class="slide" onclick="location.href='<?php echo $redirect_url; ?>content.php?id=<?php echo $row['id']; ?> '">

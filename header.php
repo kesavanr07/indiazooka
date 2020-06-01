@@ -45,6 +45,8 @@
         <title>INDIAZOOKA</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="Pragma" content="no-cache" />
         <link rel="stylesheet" href="./public/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant+Garamond">
@@ -55,14 +57,7 @@
         <?php if($is_admin_panel === false) { ?>
         <div>
             <div class="header">
-                <div class="container ">
-                
-                    <!-- <h1 onclick="location.href=''">INDIAZOOKA</h1> -->
-                    <!-- <h2> -->
-                        <!-- <span onclick="location.href='<?php //echo $redirect_url; ?>'">INDIAZOOKA</span> -->
-                        <!-- <i class="fa fa-bars toggle_menu active"></i>
-                        <i class="fa fa-times toggle_menu"></i>
-                    </h2> -->
+                <div class="container">
                     <nav class="navbar navbar-light bg-light justify-content-between">
                         <a class="navbar-brand" href="<?php echo $redirect_url; ?>">
                             <img src="./public/images/indiazooka_logo.png" class="img-responsive" width="190px">
@@ -72,13 +67,7 @@
                             <i class="fa fa-times toggle_menu"></i>
                         </div>
                         <?php if($home_page == true) {?>
-                        <form class="form-inline">
-                            <!-- <div class="input-group">
-                                <input type="text" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-outline-secondary"><span href="#" class="fa fa-search"></span></button>
-                                </div>
-                            </div> -->
+                        <div class="row">
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
                                     Home
@@ -90,7 +79,7 @@
                                     Share your Knowledge
                                 </a>
                             </div>
-                        </form>
+                        </div>
                         <?php } ?>
                     </nav>
                 </div>
@@ -130,3 +119,10 @@
             </div>
         </div>
         <?php } ?>
+
+<!-- <div class="input-group">
+    <input type="text" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+    <div class="input-group-append">
+        <button type="button" class="btn btn-outline-secondary"><span href="#" class="fa fa-search"></span></button>
+    </div>
+</div> -->
