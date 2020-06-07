@@ -6,19 +6,19 @@
                             <div class="col">
                                 <img src="./public/images/indiazooka_logo.png" class="img-responsive">
                                 <!-- <h5 style='margin-bottom: -30px;'>FOLLOW ME</h5> -->
-                                <a href="#" class="fa fa-instagram"></a>
-                                <a href="#" class="fa fa-twitter"></a>
-                                <a href="#" class="fa fa-facebook"></a>
+                                <a href="https://www.instagram.com/indiazooka?r=nametag" class="fa fa-instagram"></a>
+                                <a href="https://twitter.com/indiazooka?s=08" class="fa fa-twitter"></a>
+                                <a href="https://www.facebook.com/indiazooka.indiazooka" class="fa fa-facebook"></a>
                             </div>
                         </div>
                         <hr>
                     </div>
                     <div class="row">
-                        <!--<div class="col-3">-->
-                        <!--    <div class="footer_details">-->
-                        <!--        <img class="my-photo" src="./public/images/LOGO.png">-->
-                        <!--    </div>-->
-                        <!--</div>-->
+                        <div class="col-2">
+                           <div class="footer_details">
+                               <img class="footer-photo" src="./public/images/LOGO.png">
+                           </div>
+                        </div>
                         <div class="col">
                             <div class="footer_details top-padding">
                                 <h5>ABOUT ME</h5>

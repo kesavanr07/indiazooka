@@ -32,14 +32,41 @@
         $error_msg = "Empty Data found";
     }
 
+    
+    $breadcrum              = [];
+    if($page_content && $page_content[0] && $page_content[0]['cat_id']) {
+        $sql                    = "SELECT * FROM categories WHERE id = ".$page_content[0]['cat_id']." OR id =(SELECT parent_id FROM categories WHERE id = ".$page_content[0]['cat_id'].") ORDER BY parent_id ASC";
+        $breadcrum_result    = $conn->query($sql);
+    
+        if($breadcrum_result->num_rows > 0) {
+            foreach($breadcrum_result as $row) {
+                array_push($breadcrum, $row);
+            }
+        }
+    }
+
 ?>
 
 <div class="container context-menu">
     <div class="col-10 offset-1">
-        <div class="nav-link-tag">
-            <a href="<?php echo $redirect_url; ?>">Home</a>
+        <!-- <div class="nav-link-tag">
+            <a href="<?php //echo $redirect_url; ?>">Home</a>
             &nbsp;>&nbsp;
-            <a href="<?php echo $redirect_url; ?>context.php?cat_id=<?php echo $page_content[0]['cat_id']; ?>" class="">Context</a>
+            <a href="<?php //echo $redirect_url; ?>context.php?cat_id=<?php //echo $page_content[0]['cat_id']; ?>" class="">Context</a>
+        </div> -->
+        <div class="nav-link-tag">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="<?php echo $redirect_url; ?>">Home</a></li>
+                <?php foreach($breadcrum as $row) { ?>
+                    <li class="breadcrumb-item <?php if($row['parent_id'] != '0') { echo ""; } ?>">
+                        <a href='<?php echo $redirect_url."context.php?cat_id=".$page_content[0]['cat_id']; ?>'>
+                            <?php echo strtolower($row['category_name']); ?>
+                        </a>
+                    </li>
+                <?php } ?>
+                &nbsp;<span class="breadcrumb-text"></span>
+                <span class="breadcrumb-text"></span>
+            </ol>
         </div>
         <div class="content-header">
             <hr>

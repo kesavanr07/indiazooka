@@ -11,6 +11,17 @@
     // string passed via URL 
     parse_str($url_components['query'], $params); 
     
+        
+    $breadcrum              = [];
+    $sql                    = "SELECT * FROM categories WHERE id = ".$params['cat_id']." OR id =(SELECT parent_id FROM categories WHERE id = ".$params['cat_id'].") ORDER BY parent_id ASC";
+    $breadcrum_result    = $conn->query($sql);
+
+    if($breadcrum_result->num_rows > 0) {
+        foreach($breadcrum_result as $row) {
+            array_push($breadcrum, $row);
+        }
+    }
+    
     $page_content           = [];
     $error_msg              = "";
     $sql                    = "SELECT id, title, one_line_description, DATE_FORMAT(created_date, '%d-%b-%Y %h:%i %p') as date_value FROM pagecontent WHERE cat_id = ".$params['cat_id'];
@@ -24,14 +35,21 @@
         $error_msg = "Empty Data found";
     }
     // echo "<pre>";
-    // print_r($page_content);
+    // print_r($breadcrum);
     // echo "</pre>";
 ?>
 
 <div class="container context-menu">
     <div class="col-10 offset-1">
-            <div class="nav-link-tag">
-                <a href="<?php echo $redirect_url; ?>">Home</a>
+            <div class="nav-link-tag">                
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="<?php echo $redirect_url; ?>">Home</a></li>
+                    <?php foreach($breadcrum as $row) { ?>
+                        <li class="breadcrumb-item <?php if($row['parent_id'] != '0') { echo "active"; } ?>"  <?php if($row['parent_id'] != '0') { echo 'aria-current="page"'; } ?>>
+                            <?php echo strtolower($row['category_name']); ?>
+                        </li>
+                    <?php } ?>
+                </ol>
             </div>
             <div class="list-group">
             <?php foreach($page_content_result as $row) { ?>

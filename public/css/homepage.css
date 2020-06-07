@@ -270,8 +270,8 @@ padding-right: 0px; */
 
 footer {
 	padding: 50px 0 40px 0;
-	background-color: #161e2c;
-	color: #fff;
+	background-color: #f0f0f0;
+	color: #000;
 	min-height: 350px;
 	line-height: 2;
 }
@@ -283,11 +283,11 @@ footer .footer_details h5 {
 footer a,
 footer a:hover {
 	text-decoration: none;
-	color: #BEC0C2;
+	color: #000;
 }
 
 footer .fas {
-	color: #BEC0C2;
+	color: #000;
 }
 
 footer .bottom_content {
@@ -312,14 +312,13 @@ hr {
 }
 
 .top-padding {
-    padding-top: 40px;
+    padding-top: 25px;
 }
 
-.my-photo {
+.footer-photo {
     border-radius: 103px;
-    width: 200px;
-    height: 200px;
-    margin: 36px 10px;
+    width: 165px;
+    height: 165px;
 }
 
 .context-menu, .tab-pane {
@@ -515,11 +514,29 @@ hr {
 	color: #950740 !important;
 }
 
+.breadcrumb-item {
+	color: #950740 !important;
+	text-transform:capitalize;
+}
+
+.breadcrumb-item.active {
+    color: rgba(0, 0, 0, 0.84) !important;
+}
 .nav-tabs a:hover {
 	color: #950740 !important;
 	border: 0px solid;
 }
 
+.breadcrumb {
+    padding: 0px 0px;
+	margin-bottom: 0px;
+	background-color: rgba(255, 255, 255, 1);
+}
+.breadcrumb-item+.breadcrumb-item::before, .breadcrumb-text::before {
+    color: #950740 !important;
+	content: ">" !important;
+	font-weight: bolder !important;
+}
 
 /* @media only screen and (min-width: 1000px) {
 	.carousel-item {
@@ -641,7 +658,17 @@ hr {
 	}
 	.top-padding {
 		padding-top: 0px;
+		margin-left: 20px;
 	}
+	.footer-photo {
+		border-radius: 103px;
+		width: 70px;
+		height: 70px;
+		margin-top: 30px;
+	}
+	footer {
+		line-height: 1.5;
+	}	
 	.btm-padding {
 		padding-bottom: 3px;
 	}
