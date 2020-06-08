@@ -5,7 +5,7 @@
     include 'db_mysql.php';
     include 'header.php';
     $latest_updates    = [];
-    $sql               = "SELECT id,title, one_line_description, DATE_FORMAT(created_date, '%d-%b-%Y %h:%i %p') as date_value FROM pagecontent WHERE recent_updates = '1'";
+    $sql               = "SELECT id,title, one_line_description, DATE_FORMAT(created_date, '%d-%b-%Y %h:%i %p') as date_value FROM pagecontent WHERE trending = '1' ORDER BY created_date DESC";
     $response          = $conn->query($sql);
 
     if(!$response) {
@@ -17,7 +17,7 @@
     }
 
     $last_updates    = [];
-    $sql               = "SELECT id,title, one_line_description, DATE_FORMAT(created_date, '%d-%b-%Y %h:%i %p') as date_value FROM pagecontent ORDER BY created_date DESC LIMIT 0,7";
+    $sql               = "SELECT id,title, one_line_description, DATE_FORMAT(created_date, '%d-%b-%Y %h:%i %p') as date_value FROM pagecontent  WHERE home = '1' ORDER BY created_date DESC LIMIT 0,7";
     $response          = $conn->query($sql);
     
     if(!$response) {
@@ -76,15 +76,21 @@
             </div>
             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                 <br>
-                <form>
-                    <div class="input-group mb-3">
-                        <textarea class="form-control" id="feedback" rows="9"></textarea>
+                <?php if(1 == 2) {?>
+                    <form>
+                        <div class="input-group mb-3">
+                            <textarea class="form-control" id="feedback" rows="9"></textarea>
+                        </div>
+                        <div>
+                            <button type="reset" class="btn btn-default nav-button">Cancel</button>
+                            <button type="button" class="btn nav-button-blue pull-right">Save</button>
+                        </div>
+                    </form>
+                <?php } else { ?>
+                    <div class="alert my_alert text-center" role="alert">
+                        Building in Progress...
                     </div>
-                    <div>
-                        <button type="reset" class="btn btn-default nav-button">Cancel</button>
-                        <button type="button" class="btn nav-button-blue pull-right">Save</button>
-                    </div>
-                </form>
+                <?php } ?>
             </div>
         </div>
     </div>

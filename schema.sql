@@ -17,3 +17,7 @@ CREATE TABLE `blog_spot`.`new_table` (
 
 ALTER TABLE `indiazooka`.`pagecontent` 
 ADD COLUMN `one_line_description` VARCHAR(150) NULL DEFAULT '' AFTER `content`;
+
+ALTER TABLE `indiazooka`.`pagecontent` 
+CHANGE COLUMN `recent_updates` `trending` ENUM('0', '1') NOT NULL DEFAULT '0' ,
+ADD COLUMN `home` ENUM('0', '1') NOT NULL DEFAULT '0' AFTER `trending`;

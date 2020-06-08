@@ -32,7 +32,7 @@
             array_push($page_content, $row);
         }
     } else {
-        $error_msg = "Empty Data found";
+        $error_msg = "Your data will update soon...";
     }
     // echo "<pre>";
     // print_r($breadcrum);

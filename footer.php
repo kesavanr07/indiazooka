@@ -11,8 +11,8 @@
                                 <a href="https://www.facebook.com/indiazooka.indiazooka" class="fa fa-facebook"></a>
                             </div>
                         </div>
-                        <hr>
                     </div>
+                    <hr>
                     <div class="row">
                         <div class="col-2">
                            <div class="footer_details">
@@ -27,6 +27,13 @@
                                 </a> 
                             </div>    
                         </div>
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <small class="text-muted">
+                            © Copyright 2020 Indiazooka. All rights reserved.
+                             Developed by Weird World
+                        </small>
                     </div>
                 </div>
             </footer>
@@ -48,6 +55,7 @@
                         $('.context-menu').hide();
                         $('.tab-content').hide();
                         $('footer').hide();
+                        $('.home_menu').hide();
                         $('.links').show();
                     } else {
                         $('body').css('overflow','auto');
@@ -55,6 +63,7 @@
                         $('.tab-content').show();
                         $('footer').show();
                         $('.links').hide();
+                        $('.home_menu').show();
                     }
                 });
                 var addColorNavItem = (ths) => {

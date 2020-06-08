@@ -49,11 +49,6 @@
 
 <div class="container context-menu">
     <div class="col-10 offset-1">
-        <!-- <div class="nav-link-tag">
-            <a href="<?php //echo $redirect_url; ?>">Home</a>
-            &nbsp;>&nbsp;
-            <a href="<?php //echo $redirect_url; ?>context.php?cat_id=<?php //echo $page_content[0]['cat_id']; ?>" class="">Context</a>
-        </div> -->
         <div class="nav-link-tag">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?php echo $redirect_url; ?>">Home</a></li>
@@ -82,28 +77,32 @@
         <div class="content-block">
             <?php echo $page_content[0]['content']; ?>
         </div>
-        <div class="uploaded_by">
-            <div class="uploaded_date"><br>Reedited by</div>
-            <div><img src="./public/images/LOGO.png" alt="no-img"></div>
-            <div class="user_details">Harish<br><?php echo $page_content[0]['date_value']; ?></div>
-        </div>
-        <hr>
-        <div class="content-block">
-            <h5>Report mistakes and provide corrections:</h5>
-            <form>
-                <div class="input-group mb-3">
-                    <textarea class="form-control" id="feedback" rows="5"></textarea>
-                </div>
-                <div>
-                    <button type="reset" class="btn btn-default nav-button">Cancel</button>
-                    <button type="button" class="btn nav-button-blue pull-right">Save</button>
-                </div>
-            </form>
-        </div>
+
+        <?php if(1 == 2) {?>
+            <div class="uploaded_by">
+                <div class="uploaded_date"><br>Reedited by</div>
+                <div><img src="./public/images/LOGO.png" alt="no-img"></div>
+                <div class="user_details">Harish<br><?php //echo $page_content[0]['date_value']; ?></div>
+            </div>
+            <hr>
+            <div class="content-block">
+                <div class="title_bar">Report mistakes and provide corrections</div>
+                <form>
+                    <div class="input-group mb-3">
+                        <textarea class="form-control" id="feedback" rows="5"></textarea>
+                    </div>
+                    <div>
+                        <button type="reset" class="btn btn-default nav-button">Cancel</button>
+                        <button type="button" class="btn nav-button-blue pull-right">Save</button>
+                    </div>
+                </form>
+            </div>
+        <?php } ?>
     </div>
 
+    <?php if($related_content) { ?>
     <hr>
-    <h3 class="related_topic">Related</h3>
+    <div class="title_bar related">Related</div>
     <section class="customer-logos slider">
         <?php foreach($related_content as $row) { ?>
         <div class="slide" onclick="location.href='<?php echo $redirect_url; ?>content.php?id=<?php echo $row['id']; ?> '">
@@ -118,7 +117,6 @@
                         </p>
                     </div>
                     <div class="uploaded_by">
-                        <!-- <div class="uploaded_date"><br>Posted By</div> -->
                         <div><img src="./public/images/LOGO.png" alt="no-img"></div>
                         <div class="user_details">Harish<br><?php echo $row['date_value']; ?></div>
                     </div>
@@ -127,6 +125,7 @@
         </div>
         <?php } ?>
     </section>
+    <?php } ?>
 </div>
 
 <?php 

@@ -67,7 +67,7 @@
                             <i class="fa fa-times toggle_menu"></i>
                         </div>
                         <?php if($home_page == true) {?>
-                        <div class="row">
+                        <div class="row home_menu">
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
                                     Home
@@ -103,9 +103,10 @@
                                     <?php echo $data["category_name"]; ?>
                                 </a>
                                 <?php if(sizeof($data['sub_categories']) > 0) { ?>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <div class="dropdown-menu dropright" aria-labelledby="navbarDropdownMenuLink">
                                     <?php foreach($data['sub_categories'] as $sub_data) { ?>
                                         <a class="dropdown-item text-uppercase" href="<?php echo $redirect_url; ?>context.php?cat_id=<?php echo $sub_data["id"]; ?>">
+                                            <i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;
                                             <?php echo $sub_data["category_name"]; ?>
                                         </a>
                                     <?php } ?>
