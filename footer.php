@@ -23,7 +23,7 @@
                             <div class="footer_details top-padding">
                                 <h5>ABOUT ME</h5>
                                 <a>
-                                Hello, I'm Harish targeting Competitive exams, learnig, sharing knowledge with India as my bazooka and dedicating in memory of Rakshantha Muthukumar.
+                                Hello, I'm Harish targeting Competitive exams, learning, sharing knowledge with India as my bazooka and dedicating in memory of Rakshantha Muthukumar.
                                 </a> 
                             </div>    
                         </div>
