@@ -4,10 +4,10 @@
                     <div>
                         <div class="row btm-padding">
                             <div class="col">
-                                <img src="./public/images/indiazooka_logo.png" class="img-responsive">
-                                <!-- <h5 style='margin-bottom: -30px;'>FOLLOW ME</h5> -->
+                                <img src="./public/images/indiazooka_logo_trans.png" class="img-responsive">
                                 <a href="https://www.instagram.com/indiazooka?r=nametag" class="fa fa-instagram"></a>
                                 <a href="https://twitter.com/indiazooka?s=08" class="fa fa-twitter"></a>
+                                <a href="https://t.me/indiazooka" class="fa fa-telegram"></a>
                                 <a href="https://www.facebook.com/indiazooka.indiazooka" class="fa fa-facebook"></a>
                             </div>
                         </div>
@@ -22,8 +22,8 @@
                         <div class="col">
                             <div class="footer_details top-padding">
                                 <h5>ABOUT ME</h5>
-                                <a> 
-                                Hello, I'm Harish targeting Competitive exams with India as my bazooka and dedicating this work of mine and future works in memory of Rakshantha Muthukumar
+                                <a>
+                                Hello, I'm Harish targeting Competitive exams, learnig, sharing knowledge with India as my bazooka and dedicating in memory of Rakshantha Muthukumar.
                                 </a> 
                             </div>    
                         </div>

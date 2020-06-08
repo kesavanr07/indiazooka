@@ -47,6 +47,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta http-equiv="cache-control" content="no-cache" />
         <meta http-equiv="Pragma" content="no-cache" />
+        <link rel="icon" href="./public/images/favicon.jpg" type="image/jpg" sizes="16x16">
         <link rel="stylesheet" href="./public/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant+Garamond">

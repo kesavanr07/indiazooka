@@ -370,6 +370,22 @@ hr {
 	word-spacing: 0px;
 	color: rgba(0,0,0,.54);
 }
+/* For Temp */ 
+.uploaded_by div:first-child{
+	display: none;
+}
+.user_details {
+	margin-top:0px;
+	margin-left:0px;
+}
+.list-group-item{
+	margin-bottom: 0px;
+}
+.read_more {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+/* For temp */
 
 .my_alert {
 	height: 348px;
@@ -475,9 +491,9 @@ hr {
 		padding: 0px;
 	}
 	.fa {
-		margin-left: 30px;
-		margin-top: 11px;
-		font-size: 20px;
+		margin-left: 21px;
+		margin-top: 20px;
+		font-size: 16px;
 	}
 	.dropdown .fa {
 		margin-left: 0px;
@@ -494,6 +510,12 @@ hr {
 		margin-top: -40px;
 		margin-left: 53px;
 	}
+	/* For temp */
+	.user_details {
+		margin-top:0px;
+		margin-left:0px;
+	}
+	
 	.nav-tabs .nav-link {
 		font-size: 13px;
 	}
