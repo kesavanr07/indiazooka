@@ -606,6 +606,9 @@ hr {
 	.list-group {
 		margin-top: 40px;
 	}
+	.context-menu .list-group {
+		margin-top: 15px;
+	}
 }
 
 @media only screen and (max-width: 355px) {
