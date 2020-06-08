@@ -603,6 +603,9 @@ hr {
 	.nav-link-tag{
 		margin-bottom: 0px;
 	}
+	.list-group {
+		margin-top: 40px;
+	}
 }
 
 @media only screen and (max-width: 355px) {
