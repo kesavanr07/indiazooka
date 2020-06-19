@@ -21,7 +21,7 @@
                         </div>
                         <div class="col">
                             <div class="footer_details top-padding">
-                                <h5>ABOUT ME</h5>
+                                <div>ABOUT ME</div>
                                 <a>
                                 Hello, I'm Harish targeting Competitive exams, learning, sharing knowledge with India as my bazooka and dedicating in memory of Rakshantha Muthukumar.
                                 </a> 
@@ -31,7 +31,7 @@
                     <hr>
                     <div class="text-center">
                         <small class="text-muted">
-                            © Copyright 2020 Indiazooka. All rights reserved.
+                            © 2020 Indiazooka. All rights reserved.<br>
                              Developed by Weird World
                         </small>
                     </div>

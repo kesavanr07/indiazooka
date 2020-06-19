@@ -40,13 +40,13 @@
                             onclick="location.href='<?php echo $redirect_url; ?>content.php?id=<?php echo $row['id']; ?>';" 
                             class="list-group-item list-group-item-action"
                         >
-                            <div class="title_content"><?php echo $row['title']; ?></div>
+                            <div class="title_font"><?php echo $row['title']; ?></div>
                             <div class="list_content">
                                 <p><?php echo $row['one_line_description']; ?></p>
                                 <p class="read_more">Read More</p>
                                 <div class="uploaded_by">
                                     <div><img src="./public/images/LOGO.png" alt="no-img"></div>
-                                    <div class="user_details">Harish<br><?php echo $row['date_value']; ?></div>
+                                    <div class="user_details small_font">Harish<br><?php echo $row['date_value']; ?></div>
                                 </div>
                             </div>                
                         </div>
@@ -61,13 +61,13 @@
                             onclick="location.href='<?php echo $redirect_url; ?>content.php?id=<?php echo $row['id']; ?>';" 
                             class="list-group-item list-group-item-action"
                         >
-                            <div class="title_content"><?php echo $row['title']; ?></div>
+                            <div class="title_font"><?php echo $row['title']; ?></div>
                             <div class="list_content">
                                 <p><?php echo $row['one_line_description']; ?></p>
                                 <p class="read_more">Read More</p>
                                 <div class="uploaded_by">
                                     <div><img src="./public/images/LOGO.png" alt="no-img"></div>
-                                    <div class="user_details">Harish<br><?php echo $row['date_value']; ?></div>
+                                    <div class="user_details small_font">Harish<br><?php echo $row['date_value']; ?></div>
                                 </div>
                             </div>                
                         </div>

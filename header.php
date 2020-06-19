@@ -50,7 +50,7 @@
         <link rel="icon" href="./public/images/favicon.jpg" type="image/jpg" sizes="16x16">
         <link rel="stylesheet" href="./public/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant+Garamond">
+        <link rel="stylesheet" href="./public/css/myfont.css" />
         <link rel="stylesheet" href="./public/css/homepage.css" />
         <link rel="stylesheet" href="./public/css/slick.css" />
     </head>

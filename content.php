@@ -66,11 +66,11 @@
         <div class="content-header">
             <hr>
             <div>
-                <span class="title_content"><?php echo $page_content[0]['title']; ?></span>
+                <span class="title_font"><?php echo $page_content[0]['title']; ?></span>
             </div>
             <div class="uploaded_by">
                 <div><img src="./public/images/LOGO.png" alt="no-img"></div>
-                <div class="user_details">Harish<br><?php echo $page_content[0]['date_value']; ?></div>
+                <div class="user_details small_font">Harish<br><?php echo $page_content[0]['date_value']; ?></div>
             </div>
             <hr>
         </div>
@@ -82,7 +82,7 @@
             <div class="uploaded_by">
                 <div class="uploaded_date"><br>Reedited by</div>
                 <div><img src="./public/images/LOGO.png" alt="no-img"></div>
-                <div class="user_details">Harish<br><?php //echo $page_content[0]['date_value']; ?></div>
+                <div class="user_details small_font">Harish<br><?php //echo $page_content[0]['date_value']; ?></div>
             </div>
             <hr>
             <div class="content-block">
@@ -109,16 +109,16 @@
             <div class="related_card">
                 <div class="related_card_body">
                     <div class="related_card_content">
-                        <h3 class="related_card_title">
+                        <div class="related_card_title title_font">
                             <?php echo $row['title']; ?>
-                        </h3>
+                        </div>
                         <p>
                             <?php echo $row['one_line_description']; ?>
                         </p>
                     </div>
                     <div class="uploaded_by">
                         <div><img src="./public/images/LOGO.png" alt="no-img"></div>
-                        <div class="user_details">Harish<br><?php echo $row['date_value']; ?></div>
+                        <div class="user_details small_font">Harish<br><?php echo $row['date_value']; ?></div>
                     </div>
                 </div>
             </div>

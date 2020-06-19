@@ -1,0 +1,26 @@
+/* JosefinSlab normal */
+
+@font-face {
+    font-family: "Cardo";
+    src: url("../font/Cardo-Regular.ttf") format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* JosefinSlab italic */
+
+@font-face {
+    font-family: "Cardo";
+    src: url("../font/Cardo-Italic.ttf") format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* JosefinSlab bold */
+
+@font-face {
+    font-family: "Cardo";
+    src: url("../font/Cardo-Bold.ttf") format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}

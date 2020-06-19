@@ -1,12 +1,10 @@
 body {
-	font-family: "Optima";
+	font-family: "Cardo";
 	background-color: rgba(255, 255, 255, 1);
-	color: rgba(0, 0, 0, 0.84);
-	font-size: 19px;
+	color: #000000d6;
 	padding: 0px;
 	margin: 0px;
-	letter-spacing: 1px;
-	word-spacing: 0px;
+	letter-spacing: 0.02rem;
 }
 
 
@@ -119,7 +117,6 @@ body {
 }
 
 .card i {
-	font-size: 18px;
 	float: right;
 }
 
@@ -130,24 +127,24 @@ body {
 .related_card {
 	background-color: transparent;
 	width: 300px;
-	height: 500px;
+	height: 285px;
 	perspective: 1000px;
 	transition: transform .5s;
 }
 .related_card_body {
 	width: 100%;
-	height: 96%;
+	height: 98%;
 	border: 1px solid #e0dddd;
 	padding: 10px;
 	cursor: pointer;
 }
 
 .related_card_title {
-	min-height: 165px;
+	min-height: 111px;
 }
 
 .related_card_content {
-	min-height: 389px;
+	min-height: 211px;
 }
 
 .navbar-nav {
@@ -172,7 +169,6 @@ body {
 }
 
 .btn-outline-secondary .fa-search {
-	font-size: 21px;
 	margin-left: 0px;
 	margin-top: 0px;
 }
@@ -188,10 +184,9 @@ footer {
 	background-color: #f0f0f0;
 	color: #000;
 	min-height: 350px;
-	line-height: 2;
 }
 
-footer .footer_details h5 {
+footer .footer_details div {
 	padding: 0 0 15px 0;
 }
 
@@ -218,7 +213,6 @@ hr {
 
 .fa {
     margin-left: 40px;
-    font-size: 28px;
     float: right;
 }
 
@@ -239,10 +233,6 @@ hr {
 .context-menu, .tab-pane {
 	min-height: 524px;
 	padding: 25px 0px;
-}
-
-.nav-link {
-	font-size: 16px;
 }
 
 .remove-arrow::after {
@@ -312,10 +302,6 @@ hr {
 	border-top: 1px solid rgba(0,0,0,.125);
 }
 
-.list-group-item .list_content {
-	font-size: 18px;
-}
-
 .list-group-item:hover, .related_card:hover {
 	-ms-transform: scale(1.03); /* IE 9 */
 	-webkit-transform: scale(1.03); /* Safari 3-8 */
@@ -335,18 +321,8 @@ hr {
 .related_card_content p {
 	color: rgba(0,0,0,.54);
 }
-.read_more {
-	font-size: 16px;
-	color: #950740 !important;
-}
 
-.title_content {
-	font-size: 40px;
-}
 
-.list-group-item .title_content {
-	font-size: 28px;
-}
 
 .list-group-item-action {
 	color: rgba(0, 0, 0, 0.84);
@@ -364,10 +340,7 @@ hr {
 
 .user_details {
     margin-top: -50px;
-    font-size: 15px;
     margin-left: 68px;
-    letter-spacing: 0px;
-	word-spacing: 0px;
 	color: rgba(0,0,0,.54);
 }
 /* For Temp */ 
@@ -383,7 +356,8 @@ hr {
 }
 .read_more {
     margin-top: 0px !important;
-    margin-bottom: 0px !important;
+	margin-bottom: 0px !important;
+	color: #950740 !important;
 }
 /* For temp */
 
@@ -394,7 +368,6 @@ hr {
 	border: 0px solid;
 	background-color:rgba(255, 255, 255, 1);
 	color: #000;
-	font-size: 20px;
 }
 
 .nav-tabs .nav-link {
@@ -439,12 +412,26 @@ hr {
 }
 
 .title_bar {
-	font-size: 18px;
 	color: #8b8a8a;
 }
 
 .related {
 	margin-left: 18px;
+}
+
+.title_font {
+	font-size: 22px;
+}
+
+.small_font {
+	font-size: 13px;
+}
+.content-block {
+	line-height: 29px;
+    font-size: 1.14rem;
+}
+.content-block .title_font, .content-header{
+    font-size: 24px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -471,7 +458,7 @@ hr {
 	.context-menu {
 		margin-top: 51px;
 		min-height: 270px;
-		padding: 20px 10px;
+		padding: 20px;
 	}
 	.mr-sm-2 {
 		height: 34px;
@@ -493,20 +480,14 @@ hr {
 	.fa {
 		margin-left: 21px;
 		margin-top: 20px;
-		font-size: 16px;
 	}
 	.dropdown .fa {
 		margin-left: 0px;
 		margin-top: 4px;		
 		float:left;
-		font-size: 14px;
 		display: block;
 	}
-	.related_card_content p, .nav-link-tag {
-		font-size: 16px;
-	}
 	.user_details {
-		font-size: 12px;
 		margin-top: -40px;
 		margin-left: 53px;
 	}
@@ -516,40 +497,21 @@ hr {
 		margin-left:0px;
 	}
 	
-	.nav-tabs .nav-link {
-		font-size: 13px;
-	}
-	.read_more, .content-block {
-		font-size: 15px;
-	}
-	.h5, h5 {
-		font-size: 1.02rem;
-	}
 	.list-group-item {
-		padding: 6px 0px;
-	}
-	.title_content {
-		font-size: 24px;
-	}
-	.list-group-item .title_content, .related_card_title {
-		font-size: 22px;
+		padding: 6px 0px 18px 6px;
 	}
 	.related_card {
-		height: 375px;
+		height: 310px;
 	}	
-	.related_card_title {
+	/* .related_card_title {
 		min-height : 120px;
-	}
+	} */
 	.related_topic {
 		margin-left: 18px;
-		font-size: 1.4rem;
 	}
-	.related_card_content {
+	/* .related_card_content {
 		min-height: 280px;
-	}
-	.list-group-item .list_content {
-		font-size: 16px;
-	}
+	} */
 	.uploaded_by img {
 		width: 45px;
 		height: 45px;
@@ -570,6 +532,7 @@ hr {
 	.top-padding {
 		padding-top: 0px;
 		margin-left: 20px;
+		font-size: 13px;
 	}
 	.footer-photo {
 		border-radius: 103px;
@@ -577,14 +540,10 @@ hr {
 		height: 70px;
 		margin-top: 30px;
 	}
-	footer, .breadcrumb {
-		font-size: 13px;
-	}	
 	.btm-padding {
 		padding-bottom: 3px;
 	}
 	footer {
-		line-height: 1.5;
 		padding : 15px 0px 5px 0px;
 		min-height: 255px;
 	}
@@ -609,6 +568,9 @@ hr {
 	.context-menu .list-group {
 		margin-top: 15px;
 	}
+	.related_card_content {
+		min-height: 202px;
+	}
 }
 
 @media only screen and (max-width: 355px) {
@@ -616,15 +578,9 @@ hr {
 		padding-left: 0px;
 		padding-right: 0px;
 	}
-	.dropdown-menu {
-		font-size: 13px;
-	}
 }
   
 @media only screen and (max-width: 320px) {
-	.header .container h2, .toggle_menu {
-		font-size: 28px;
-	}
 	.nav-tabs {
 		margin-left: 15px;
 	}
@@ -633,31 +589,23 @@ hr {
 	}
 }
 @media only screen and (max-width: 290px) {
-	.header .container h2, .toggle_menu {
-		font-size: 25px;
-	}
 }
 @media only screen and (max-width: 260px) {
-	.header .container h2, .toggle_menu{
-		font-size: 23px;
-	}
 	.related_card {
 		height: 500px;
-	}	
-	.related_card_title {
+	}
+	/* .related_card_title {
 		min-height : 170px;
-	}
-	.related_card_content {
+	} */
+	/* .related_card_content {
 		min-height: 290px;
-	}
+	} */
 }
 @media only screen and (max-width: 252px) {
-	.header .container h2, .toggle_menu {
-		font-size: 20px;
-	}
 }
 
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent;
 }
+
