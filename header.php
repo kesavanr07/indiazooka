@@ -55,7 +55,6 @@
         <link rel="stylesheet" href="./public/css/slick.css" />
     </head>
     <body>
-        <?php if($is_admin_panel === false) { ?>
         <div>
             <div class="header">
                 <div class="container">
@@ -68,7 +67,7 @@
                             <i class="fa fa-times toggle_menu"></i>
                         </div>
                         <?php if($home_page == true) {?>
-                        <div class="row home_menu">
+                        <div class="row home_menu title_font_res">
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
                                     Home
@@ -90,7 +89,7 @@
                     <nav class="navbar navbar-expand-sm">
                         <ul class="navbar-nav">
                             <?php foreach($categories_data as $data) { ?>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown title_font_res">
                                 <a
                                     class="nav-link text-uppercase <?php if(sizeof($data['sub_categories']) === 0) { echo "remove-arrow"; } else { echo "dropdown-toggle"; }?>"
                                     href="<?php echo $redirect_url; ?>context.php?cat_id=<?php echo $data["id"]; ?>"
@@ -104,7 +103,7 @@
                                     <?php echo $data["category_name"]; ?>
                                 </a>
                                 <?php if(sizeof($data['sub_categories']) > 0) { ?>
-                                <div class="dropdown-menu dropright" aria-labelledby="navbarDropdownMenuLink">
+                                <div class="dropdown-menu dropright title_font_res" aria-labelledby="navbarDropdownMenuLink">
                                     <?php foreach($data['sub_categories'] as $sub_data) { ?>
                                         <a class="dropdown-item text-uppercase" href="<?php echo $redirect_url; ?>context.php?cat_id=<?php echo $sub_data["id"]; ?>">
                                             <i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;
@@ -120,7 +119,6 @@
                 </div>
             </div>
         </div>
-        <?php } ?>
 
 <!-- <div class="input-group">
     <input type="text" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">

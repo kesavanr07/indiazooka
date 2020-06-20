@@ -426,6 +426,9 @@ hr {
 .small_font {
 	font-size: 13px;
 }
+.title_font_res {
+	font-size: 16px;
+}
 .content-block {
 	line-height: 29px;
     font-size: 1.14rem;
@@ -502,16 +505,10 @@ hr {
 	}
 	.related_card {
 		height: 310px;
-	}	
-	/* .related_card_title {
-		min-height : 120px;
-	} */
+	}
 	.related_topic {
 		margin-left: 18px;
 	}
-	/* .related_card_content {
-		min-height: 280px;
-	} */
 	.uploaded_by img {
 		width: 45px;
 		height: 45px;
@@ -531,8 +528,7 @@ hr {
 	}
 	.top-padding {
 		padding-top: 0px;
-		margin-left: 20px;
-		font-size: 13px;
+		margin-left: 30px;
 	}
 	.footer-photo {
 		border-radius: 103px;
@@ -571,12 +567,26 @@ hr {
 	.related_card_content {
 		min-height: 202px;
 	}
+	.title_font_res {
+		font-size: 12px;
+    	margin-left: 10px;
+	}
+	footer .title_font_res {
+    	margin-left: 0px;
+	}
+
 }
 
 @media only screen and (max-width: 355px) {
 	.header .container {
 		padding-left: 0px;
 		padding-right: 0px;
+	}
+	.header .img-responsive {
+		margin-left: 15px;
+	}
+	.res-menu {
+		margin-right: 12px;
 	}
 }
   
@@ -594,12 +604,6 @@ hr {
 	.related_card {
 		height: 500px;
 	}
-	/* .related_card_title {
-		min-height : 170px;
-	} */
-	/* .related_card_content {
-		min-height: 290px;
-	} */
 }
 @media only screen and (max-width: 252px) {
 }
@@ -609,3 +613,6 @@ hr {
     background: transparent;
 }
 
+.admin_panel .fa {
+	margin-left: 0px;
+}

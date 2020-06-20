@@ -1,7 +1,6 @@
 <?php
-    $is_admin_panel = false;
     $home_page = true;
-
+    
     include 'db_mysql.php';
     include 'header.php';
     $latest_updates    = [];

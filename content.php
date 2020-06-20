@@ -1,5 +1,4 @@
 <?php
-    $is_admin_panel = false;
     $home_page = false;
 
     include 'db_mysql.php';
@@ -50,7 +49,7 @@
 <div class="container context-menu">
     <div class="col-10 offset-1">
         <div class="nav-link-tag">
-            <ol class="breadcrumb">
+            <ol class="breadcrumb title_font_res">
                 <li class="breadcrumb-item"><a href="<?php echo $redirect_url; ?>">Home</a></li>
                 <?php foreach($breadcrum as $row) { ?>
                     <li class="breadcrumb-item <?php if($row['parent_id'] != '0') { echo ""; } ?>">
