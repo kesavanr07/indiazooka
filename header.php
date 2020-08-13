@@ -3,7 +3,7 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
     if($_SERVER['SERVER_NAME'] === 'localhost') {
-        $redirect_url = "/blog_app/";
+        $redirect_url = "/indiazooka/";
     } else {
         $redirect_url = '/';
     }
@@ -72,9 +72,9 @@
                                 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
                                     Home
                                 </a>
-                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-trending" role="tab" aria-controls="nav-profile" aria-selected="false">
+                                <!-- <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-trending" role="tab" aria-controls="nav-profile" aria-selected="false">
                                     Trending
-                                </a>
+                                </a> -->
                                 <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
                                     Share your Knowledge
                                 </a>

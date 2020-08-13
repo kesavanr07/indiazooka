@@ -41,13 +41,41 @@
         }
     }
 
+    $file_name = isset($_POST['old_image_file']) ? $_POST['old_image_file'] : "" ;
+
+    $errors= "";
+    if($_FILES && $_FILES['image_file'] && $_FILES['image_file']['size'] > 0) {
+        $file_name = time()."_".$_FILES['image_file']['name'];
+        $file_size = $_FILES['image_file']['size'];
+        $file_tmp = $_FILES['image_file']['tmp_name'];
+        $file_type = $_FILES['image_file']['type'];
+        $tmp = explode('.',$_FILES['image_file']['name']);
+        $file_ext = strtolower(end($tmp));
+        
+        $extensions= array("jpeg","jpg","png");
+        
+        if(in_array($file_ext,$extensions)=== false){
+           $errors .= " Extension not allowed, please choose a JPEG or PNG file.";
+        }
+        
+        if($file_size > 5097152) {
+           $errors .='& File size must be excately 2 MB';
+        }
+        
+        if(empty($errors)==true) {
+           move_uploaded_file($file_tmp,"../public/images/uploads/".$file_name);
+        }
+    }
+    // if($_POST) {
+    //     echo $file_name; die;
+    // }
     if($_POST) {
 
         if(isset($_POST['id']) && $_POST['id'] != '') {
-            $sql = "UPDATE pagecontent SET title = '".$_POST['title']."', one_line_description = '".$_POST['description']."', content='".$_POST['detail_content']."', cat_id='".$_POST['sub_category']."' WHERE id = '".$_POST['id']."'";
+            $sql = "UPDATE pagecontent SET title = '".$_POST['title']."', one_line_description = '".$_POST['description']."', content='".$_POST['detail_content']."', images='".$file_name."', cat_id='".$_POST['sub_category']."' WHERE id = '".$_POST['id']."'";
         } else {
-            $sql = "INSERT INTO pagecontent (title, one_line_description, content, cat_id)
-            VALUES ('".$_POST['title']."', '".$_POST['description']."', '".$_POST['detail_content']."', '".$_POST['sub_category']."')";
+            $sql = "INSERT INTO pagecontent (title, one_line_description, content, cat_id,images)
+            VALUES ('".$_POST['title']."', '".$_POST['description']."', '".$_POST['detail_content']."', '".$_POST['sub_category']."', '".$file_name."')";
         }
         $response = $conn->query($sql);
         if ($response === TRUE) {
@@ -58,9 +86,10 @@
         } else {
             $err_msg = "<div class='alert alert-danger text-center'>
                 <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                Some error on saving your data, Try again later.
+                Some error on saving your data, Try again later. ".$errors."
             </div>";
-        }
+        }    
+
     }
     
     
@@ -75,7 +104,7 @@
             <h3>
                 <?php if($edit_content) { echo "Edit"; } else { echo "Add"; } ?> Content
             </h3>
-            <form method="post" class='<?php if($edit_content) { echo "view_data";} ?>'>
+            <form method="post" class='<?php if($edit_content) { echo "view_data";} ?>'  enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php if($edit_content) { echo $edit_content[0]['id']; } ?>">
                 <div class="form-group">
                     <label for="title">Title</label>
@@ -105,6 +134,13 @@
                             </option>
                         <?php } ?>
                         </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label for="category">Image Upload</label>
+                        <input type="file" class="form-control" id="image_file" name="image_file">
+                        <input type="hidden" class="form-control" name="old_image_file" value="<?php if($edit_content) { echo $edit_content[0]['images']; } else { echo ""; } ?>" >
                     </div>
                 </div>
                 <div class="form-group">

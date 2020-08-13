@@ -8,7 +8,7 @@ CREATE TABLE `blog_spot`.`blog_content` (
   `cat_id` INT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`));
 
-CREATE TABLE `blog_spot`.`new_table` (
+CREATE TABLE `categories` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `parent_id` INT NOT NULL DEFAULT 0,
   `category_name` VARCHAR(45) NOT NULL DEFAULT '',

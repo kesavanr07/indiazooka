@@ -3,7 +3,7 @@
                 <div>
                     <div class="row btm-padding">
                         <div class="col">
-                            <img src="./public/images/indiazooka_logo_trans.png" class="img-responsive">
+                            <img src="./public/images/indiazooka_logo.png" class="img-responsive">
                             <a href="https://www.instagram.com/indiazooka?r=nametag" class="fa fa-instagram"></a>
                             <a href="https://twitter.com/indiazooka?s=08" class="fa fa-twitter"></a>
                             <a href="https://t.me/indiazooka" class="fa fa-telegram"></a>

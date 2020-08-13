@@ -56,9 +56,21 @@
                 onclick="location.href='<?php echo $redirect_url; ?>content.php?id=<?php echo $row['id']; ?>';" 
                 class="list-group-item list-group-item-action"
             >
+            <?php if(isset($row['images'])) { ?>
+                <div class="banner-img">
+                    <img src="./public/images/uploads/<?php echo $row['images']; ?>" class="img-responsive" alt="">
+                    <!-- <div class="now-added">
+                        Now Added
+                    </div> -->
+                </div>
+            <?php } ?>
+                <?php if(!isset($row['images'])) { ?>
                 <div class="title_font"><?php echo $row['title']; ?></div>
+                <?php } ?>
                 <div class="list_content">
+                <?php if(!isset($row['images'])) { ?>
                     <p><?php echo $row['one_line_description']; ?></p>
+                    <?php } ?>
                     <p class="read_more">Read More</p>
                     <div class="uploaded_by">
                         <div><img src="./public/images/LOGO.png" alt="no-img"></div>

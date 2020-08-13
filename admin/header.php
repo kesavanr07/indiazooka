@@ -2,7 +2,7 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
     if($_SERVER['SERVER_NAME'] === 'localhost') {
-        $redirect_url = "/blog_app/";
+        $redirect_url = "/indiazooka/";
     } else {
         $redirect_url = '/';
     }

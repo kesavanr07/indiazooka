@@ -9,8 +9,8 @@ if($_SERVER['HTTPS']!="on") {
 if($_SERVER['HTTP_HOST'] === 'localhost') {
     $servername = "localhost";
     $username   = "root";
-    $password   = "root";
-    $dbname     = "indiazooka";
+    $password   = "";
+    $dbname     = "indiazoo_blog";
 } else {
     $servername = "localhost";
     $username   = "indiazoo";

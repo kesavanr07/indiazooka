@@ -4,7 +4,7 @@
     include 'db_mysql.php';
     include 'header.php';
     $latest_updates    = [];
-    $sql               = "SELECT id,title, one_line_description, DATE_FORMAT(created_date, '%d-%b-%Y %h:%i %p') as date_value FROM pagecontent WHERE trending = '1' ORDER BY created_date DESC";
+    $sql               = "SELECT  p.id, p.title,  p.one_line_description,  p.images,c.category_name , DATE_FORMAT( p.created_date, '%d-%b-%Y %h:%i %p') as date_value FROM pagecontent as p LEFT JOIN categories as c ON (c.id=p.cat_id) WHERE  p.trending = '1' ORDER BY  p.created_date DESC";
     $response          = $conn->query($sql);
 
     if(!$response) {
@@ -16,7 +16,7 @@
     }
 
     $last_updates    = [];
-    $sql               = "SELECT id,title, one_line_description, DATE_FORMAT(created_date, '%d-%b-%Y %h:%i %p') as date_value FROM pagecontent  WHERE home = '1' ORDER BY created_date DESC LIMIT 0,7";
+    $sql               = "SELECT p.id,p.title, p.one_line_description,p.images,c.category_name, DATE_FORMAT(p.created_date, '%d-%b-%Y %h:%i %p') as date_value FROM pagecontent as p LEFT JOIN categories as c ON (c.id=p.cat_id) WHERE p.home = '1' ORDER BY p.created_date DESC LIMIT 0,7";
     $response          = $conn->query($sql);
     
     if(!$response) {
@@ -39,10 +39,22 @@
                             onclick="location.href='<?php echo $redirect_url; ?>content.php?id=<?php echo $row['id']; ?>';" 
                             class="list-group-item list-group-item-action"
                         >
-                            <div class="title_font"><?php echo $row['title']; ?></div>
+                            <?php if(isset($row['images'])) { ?>
+                                <div class="banner-img">
+                                <img src="./public/images/uploads/<?php echo $row['images']; ?>" class="img-responsive" alt="">
+                                <div class="now-added">
+                                <?php echo $row['category_name']; ?>
+                                </div>
+                                </div>
+                            <?php } ?>
+                            <?php if(!isset($row['images'])) { ?>
+                                <div class="title_font"><?php echo $row['title']; ?></div>
+                            <?php } ?>
                             <div class="list_content">
+                                <?php if(!isset($row['images'])) { ?>
                                 <p><?php echo $row['one_line_description']; ?></p>
-                                <p class="read_more">Read More</p>
+                                <?php } ?>
+                                <!-- <p class="read_more">Read More</p> -->
                                 <div class="uploaded_by">
                                     <div><img src="./public/images/LOGO.png" alt="no-img"></div>
                                     <div class="user_details small_font">Harish<br><?php echo $row['date_value']; ?></div>
@@ -52,27 +64,39 @@
                     <?php } ?>
                 </div>
             </div>
-            <div class="tab-pane fade" id="nav-trending" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <!-- <div class="tab-pane fade" id="nav-trending" role="tabpanel" aria-labelledby="nav-profile-tab">
                 <br>
                 <div class="list-group">
-                    <?php foreach($latest_updates as $row) { ?>
+                    <?php //foreach($latest_updates as $row) { ?>
                         <div 
-                            onclick="location.href='<?php echo $redirect_url; ?>content.php?id=<?php echo $row['id']; ?>';" 
+                            onclick="location.href='<?php //echo $redirect_url; ?>content.php?id=<?php //echo $row['id']; ?>';" 
                             class="list-group-item list-group-item-action"
                         >
-                            <div class="title_font"><?php echo $row['title']; ?></div>
+                            <?php //if(isset($row['images'])) { ?>
+                                <div class="banner-img">
+                                <img src="./public/images/uploads/<?php //echo $row['images']; ?>" class="img-responsive" alt="">
+                                <div class="now-added">
+                                <?php //echo $row['category_name']; ?>
+                                </div>
+                                </div>
+                            <?php //} ?>
+                            <?php //if(!isset($row['images'])) { ?>
+                            <div class="title_font"><?php //echo $row['title']; ?></div>
+                            <?php //} ?>
                             <div class="list_content">
-                                <p><?php echo $row['one_line_description']; ?></p>
-                                <p class="read_more">Read More</p>
+                                <?php //if(!isset($row['images'])) { ?>
+                                <p><?php// echo $row['one_line_description']; ?></p>
+                                <?php //} ?>
+                                 <p class="read_more">Read More</p> 
                                 <div class="uploaded_by">
                                     <div><img src="./public/images/LOGO.png" alt="no-img"></div>
-                                    <div class="user_details small_font">Harish<br><?php echo $row['date_value']; ?></div>
+                                    <div class="user_details small_font">Harish<br><?php //echo $row['date_value']; ?></div>
                                 </div>
                             </div>                
                         </div>
-                    <?php } ?>
+                    <?php //} ?>
                 </div>
-            </div>
+            </div> -->
             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                 <br>
                 <?php if(1 == 2) {?>
