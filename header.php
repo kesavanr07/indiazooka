@@ -59,25 +59,26 @@
             <div class="header">
                 <div class="container">
                     <nav class="navbar navbar-light bg-light justify-content-between">
-                        <a class="navbar-brand" href="<?php echo $redirect_url; ?>">
-                            <img src="./public/images/indiazooka_logo.png" class="img-responsive" width="190px">
-                        </a>
-                        <div class="res-menu">
+                        
+                    <div class="res-menu">
                             <i class="fa fa-bars toggle_menu active"></i>
                             <i class="fa fa-times toggle_menu"></i>
                         </div>
+                        <a class="navbar-brand" href="<?php echo $redirect_url; ?>">
+                            <img src="./public/images/indiazooka_logo.png" class="img-responsive" width="190px">
+                        </a>
                         <?php if($home_page == true) {?>
                         <div class="row home_menu title_font_res">
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
+                                <!-- <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
                                     Home
-                                </a>
+                                </a> -->
                                 <!-- <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-trending" role="tab" aria-controls="nav-profile" aria-selected="false">
                                     Trending
                                 </a> -->
-                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
+                                <!-- <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
                                     Share your Knowledge
-                                </a>
+                                </a> -->
                             </div>
                         </div>
                         <?php } ?>

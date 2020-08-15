@@ -188,7 +188,7 @@ footer {
 }
 
 footer .footer_details div {
-  padding: 0 0 15px 0;
+  padding: 0 0 0px 0;
 }
 
 footer a,
@@ -214,7 +214,7 @@ hr {
 
 .fa {
   margin-left: 40px;
-  float: right;
+  /* float: right; */
 }
 
 .btm-padding {
@@ -466,6 +466,15 @@ hr {
   .header .container h1 {
     display: none;
   }
+  .title_font {
+    font-size : 14px;
+  }
+  .list_content p {
+    font-size: 12px;
+  }
+  .footer_details.top-padding div {
+      font-size: 12px;
+  }
   .header .container .res-menu {
     display: block;
   }
@@ -475,9 +484,9 @@ hr {
     border-bottom: 0px;
   }
   .context-menu {
-    margin-top: 51px;
+    margin-top: 45px;
     min-height: 270px;
-    padding: 20px;
+    padding: 10px;
   }
   .mr-sm-2 {
     height: 34px;
@@ -498,8 +507,11 @@ hr {
     padding: 0px;
   }
   .fa {
-    margin-left: 21px;
-    margin-top: 20px;
+    margin-left: 52px;
+    /* margin-top: 20px; */
+  }
+  .list-group-item .list_content p {
+    margin-bottom : 0rem;
   }
   .dropdown .fa {
     margin-left: 0px;
@@ -518,7 +530,7 @@ hr {
   }
 
   .list-group-item {
-    padding: 6px 0px 18px 6px;
+    padding: 6px 0px 6px 6px;
   }
   .related_card {
     height: 310px;
@@ -538,7 +550,7 @@ hr {
     padding-left: 0px;
   }
   .header {
-    height: 55px;
+    height: 46px;
   }
   body {
     letter-spacing: 0px;
@@ -551,18 +563,24 @@ hr {
     border-radius: 103px;
     width: 70px;
     height: 70px;
-    margin-top: 30px;
+    margin-top: 10px;
   }
   .btm-padding {
     padding-bottom: 3px;
   }
   footer {
     padding: 15px 0px 5px 0px;
-    min-height: 255px;
+    min-height: 195px;
   }
   footer .col {
     padding-right: 9px;
     padding-left: 9px;
+  }
+  .content-header .title_font, .context-menu .title_font {
+    font-size: 18px;
+  }
+  .content-block {
+    font-size: 15px;
   }
   .links .dropdown-menu {
     border: 0px;
@@ -579,7 +597,7 @@ hr {
     margin-top: 40px;
   }
   .context-menu .list-group {
-    margin-top: 15px;
+    margin-top: 5px;
   }
   .related_card_content {
     min-height: 202px;
@@ -590,6 +608,26 @@ hr {
   }
   footer .title_font_res {
     margin-left: 0px;
+    letter-spacing: -0.4px;
+  }
+  .breadcrumb-item+.breadcrumb-item::before {
+    padding-right: .03rem;
+  }
+  .header .fa {
+    margin-left: 17px;
+  }
+  .header .container .res-menu {
+    padding-right : 0px;
+  }
+  .header .img-responsive {
+    margin-left: 0px;
+  }
+  footer hr, .context-menu hr {
+    margin-top : 2px;
+    margin-bottom : 2px;
+  }
+  small {
+    font-size: 62%;
   }
   .banner-img .now-added {
     font-size: 9px;
@@ -602,12 +640,6 @@ hr {
   .header .container {
     padding-left: 0px;
     padding-right: 0px;
-  }
-  .header .img-responsive {
-    margin-left: 15px;
-  }
-  .res-menu {
-    margin-right: 12px;
   }
 }
 

@@ -1,17 +1,6 @@
         <footer>
-            <div class="container">            
-                <div>
-                    <div class="row btm-padding">
-                        <div class="col">
-                            <img src="./public/images/indiazooka_logo.png" class="img-responsive">
-                            <a href="https://www.instagram.com/indiazooka?r=nametag" class="fa fa-instagram"></a>
-                            <a href="https://twitter.com/indiazooka?s=08" class="fa fa-twitter"></a>
-                            <a href="https://t.me/indiazooka" class="fa fa-telegram"></a>
-                            <a href="https://www.facebook.com/indiazooka.indiazooka" class="fa fa-facebook"></a>
-                        </div>
-                    </div>
-                </div>
-                <hr>
+            <div class="container"> 
+                <!-- <hr> -->
                 <div class="row">
                     <div class="col-2">
                         <div class="footer_details">
@@ -28,6 +17,20 @@
                     </div>
                 </div>
                 <hr>
+                           
+                <div>
+                    <div class="row">
+                        <div class="col">
+                            <!-- <img src="./public/images/indiazooka_logo.png" class="img-responsive"> -->
+                            <a href="https://www.facebook.com/indiazooka.indiazooka" class="fa fa-facebook"></a>
+                            <a href="https://twitter.com/indiazooka?s=08" class="fa fa-twitter"></a>
+                            <a href="https://www.instagram.com/indiazooka?r=nametag" class="fa fa-instagram"></a>
+                            <a href="https://t.me/indiazooka" class="fa fa-telegram"></a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+
                 <div class="text-center">
                     <small class="text-muted">
                         © 2020 Indiazooka. All rights reserved.<br>
