@@ -310,6 +310,9 @@ hr {
   transform: scale(1.03);
   background-color: #fff;
 }
+.list-group-item .title_font:hover{
+  text-decoration-line: underline;
+}
 
 .nav-tabs,
 .nav-link.active {
@@ -406,7 +409,7 @@ hr {
 .breadcrumb-item + .breadcrumb-item::before,
 .breadcrumb-text::before {
   color: #950740 !important;
-  content: ">" !important;
+  /* content: ">" !important; */
   font-weight: bolder !important;
 }
 .dropdown .fa {
@@ -452,6 +455,13 @@ hr {
   padding: 4px 20px;
 }
 
+.head-text {
+  padding-left: 4px;
+  background: #e0e0e0;
+  color: #000;
+  width: 10.5%;
+  font-size: 19px;
+}
 @media only screen and (max-width: 600px) {
   .links,
   .home_menu {
@@ -603,8 +613,11 @@ hr {
     min-height: 202px;
   }
   .title_font_res {
-    font-size: 10px;
-    margin-left: 10px;
+    font-size: 14px;
+    margin-left: 2px;
+  }
+  .breadcrumb-item+.breadcrumb-item {
+    padding-left : 0.2rem;
   }
   footer .title_font_res {
     margin-left: 0px;
@@ -622,9 +635,13 @@ hr {
   .header .img-responsive {
     margin-left: 0px;
   }
-  footer hr, .context-menu hr {
+  footer hr {
     margin-top : 2px;
     margin-bottom : 2px;
+  }
+  .context-menu hr {
+    margin-top: 8px;
+    margin-bottom: 8px;
   }
   small {
     font-size: 62%;
@@ -633,6 +650,11 @@ hr {
     font-size: 9px;
     padding: 3px 9px;
     margin-top: -27px;
+  }
+  
+  .head-text {
+    width: 27%;
+    font-size: 15px;
   }
 }
 

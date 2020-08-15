@@ -127,6 +127,14 @@
     <?php } ?>
 </div>
 
+<style>
+    .navbar-brand {
+        margin-right: 28%;
+    }
+    .header .fa {
+       margin-left: 9px;
+    }
+</style>
 <?php 
     include 'footer.php';
 ?>

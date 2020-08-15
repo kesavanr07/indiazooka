@@ -34,6 +34,7 @@
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                 <br>
                 <div class="list-group">
+                    <div class="head-text">RECENT</div>
                     <?php foreach($last_updates as $row) { ?>
                         <div 
                             onclick="location.href='<?php echo $redirect_url; ?>content.php?id=<?php echo $row['id']; ?>';" 
@@ -118,6 +119,16 @@
         </div>
     </div>
 </div>
+
+<style>
+    .header .fa {
+       margin-left: 9px;
+    }
+    .container {
+        padding-right: 9px;
+        padding-left: 9px;
+    }
+</style>
 <?php 
 include 'footer.php';
 ?>
