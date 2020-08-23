@@ -234,7 +234,7 @@ hr {
 .context-menu,
 .tab-pane {
   min-height: 524px;
-  padding: 25px 0px;
+  padding: 11px 0px;
 }
 
 .remove-arrow::after {
@@ -356,7 +356,7 @@ hr {
   margin-left: 0px;
 }
 .list-group-item {
-  margin-bottom: 0px;
+  margin-bottom: 2px;
 }
 .read_more {
   margin-top: 0px !important;
@@ -586,7 +586,7 @@ hr {
     padding-right: 9px;
     padding-left: 9px;
   }
-  .content-header .title_font, .context-menu .title_font {
+  .content-header .title_font, .context-menu .title_font, #nav-tabContent .title_font {
     font-size: 18px;
   }
   .content-block {

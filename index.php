@@ -32,7 +32,6 @@
     <div class="col-10 offset-1">
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                <br>
                 <div class="list-group">
                     <div class="head-text">RECENT</div>
                     <?php foreach($last_updates as $row) { ?>

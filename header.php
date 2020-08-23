@@ -30,7 +30,7 @@
                 }
             }
             $main_row['sub_categories'] =  $sub_categories;
-            if($main_row['id'] !== '4' && $main_row['id'] !== '33') {
+            if($main_row['id'] !== '33') {
                 array_push($categories_data, $main_row);
             }
         }
