@@ -23,7 +23,7 @@
     
     $page_content           = [];
     $error_msg              = "";
-    $sql                    = "SELECT id, title, one_line_description, DATE_FORMAT(created_date, '%d-%b-%Y %h:%i %p') as date_value FROM pagecontent WHERE cat_id = ".$params['cat_id'];
+    $sql                    = "SELECT id, title, one_line_description, images, DATE_FORMAT(created_date, '%d-%b-%Y %h:%i %p') as date_value FROM pagecontent WHERE cat_id = ".$params['cat_id'];
     $page_content_result    = $conn->query($sql);
 
     if($page_content_result->num_rows > 0) {
@@ -56,20 +56,20 @@
                 onclick="location.href='<?php echo $redirect_url; ?>content.php?id=<?php echo $row['id']; ?>';" 
                 class="list-group-item list-group-item-action"
             >
-            <?php if(isset($row['images'])) { ?>
-                <div class="banner-img">
-                    <img src="./public/images/uploads/<?php echo $row['images']; ?>" class="img-responsive" alt="">
-                    <!-- <div class="now-added">
-                        Now Added
-                    </div> -->
-                </div>
-            <?php } ?>
+                <?php if(isset($row['images'])) { ?>
+                    <div class="banner-img">
+                        <img src="./public/images/uploads/<?php echo $row['images']; ?>" class="img-responsive" alt="">
+                        <div class="now-added">
+                            <?php echo $breadcrum[1]['category_name']; ?>
+                        </div>
+                    </div>
+                <?php } ?>
                 <?php if(!isset($row['images'])) { ?>
-                <div class="title_font"><?php echo $row['title']; ?></div>
+                    <div class="title_font"><?php echo $row['title']; ?></div>
                 <?php } ?>
                 <div class="list_content">
-                <?php if(!isset($row['images'])) { ?>
-                    <p><?php echo $row['one_line_description']; ?></p>
+                    <?php if(!isset($row['images'])) { ?>
+                        <p><?php echo $row['one_line_description']; ?></p>
                     <?php } ?>
                     <p class="read_more">Read More</p>
                     <div class="uploaded_by">
