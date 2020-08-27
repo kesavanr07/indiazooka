@@ -71,7 +71,7 @@
                     <?php if(!isset($row['images'])) { ?>
                         <p><?php echo $row['one_line_description']; ?></p>
                     <?php } ?>
-                    <p class="read_more">Read More</p>
+                    <!-- <p class="read_more">Read More</p> -->
                     <div class="uploaded_by">
                         <div><img src="./public/images/LOGO.png" alt="no-img"></div>
                         <div class="user_details small_font">Harish<br><?php echo $page_content[0]['date_value']; ?></div>
